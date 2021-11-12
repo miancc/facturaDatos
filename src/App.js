@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Domicilio, Empresa } from './components/index';
+import { Domicilio, Empresa, Representante } from './components/index';
 import Util from './Helpers/Util';
 
 export default class App extends Component {
@@ -37,6 +37,9 @@ export default class App extends Component {
               {tStep == 1 && <Empresa onRef={(ref) => (this.step1Ref = ref)} />}
               {tStep == 2 && (
                 <Domicilio onRef={(ref) => (this.step2Ref = ref)} />
+              )}
+              {tStep == 1 && (
+                <Representante onRef={(ref) => (this.step3Ref = ref)} />
               )}
             </div>
             <div className="card-action">

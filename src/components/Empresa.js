@@ -1,15 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import Util from '../Helpers/Util';
+import { MsgValidate } from './Common';
 
 export default class Empresa extends Component {
   constructor(props) {
     super(props);
+    this.formId = 'form-empresa';
     this.form = null;
   }
 
   // #region ------------------------------------------------> "COMPONENT" //
   componentDidMount() {
-    this.form = document.getElementById('form-empresa');
+    this.form = document.getElementById(this.formId);
     if (typeof this.props.onRef === 'function') this.buildRef();
   }
 
@@ -42,7 +44,7 @@ export default class Empresa extends Component {
         <span className="card-title">
           <h4>Empresa</h4>
         </span>
-        <form id="form-empresa" className="col s12">
+        <form id={this.formId} className="col s12">
           <div className="row">
             <div className="input-field col s12">
               <input
@@ -50,9 +52,11 @@ export default class Empresa extends Component {
                 name="razon_social"
                 type="text"
                 className="validate"
+                minLength={5}
                 required
               />
               <label for="razon_social">Razon Social</label>
+              <MsgValidate />
             </div>
           </div>
           <div className="row">
@@ -62,9 +66,11 @@ export default class Empresa extends Component {
                 name="nombre_comercial"
                 type="text"
                 className="validate"
+                minLength={5}
                 required
               />
               <label for="nombre_comercial ">Nombre comercial </label>
+              <MsgValidate />
             </div>
 
             <div className="input-field col s4">
@@ -73,9 +79,11 @@ export default class Empresa extends Component {
                 name="nacionalidad"
                 type="text"
                 className="validate"
+                minLength={2}
                 required
               />
               <label for="nacionalidad">Nacionalidad</label>
+              <MsgValidate />
             </div>
           </div>
 
@@ -86,9 +94,11 @@ export default class Empresa extends Component {
                 name="fecha_constitución"
                 type="date"
                 className="validate"
+                minLength={5}
                 required
               />
               <label for="fecha_constitución">Fecha de constitución</label>
+              <MsgValidate />
             </div>
 
             <div className="input-field col s6">
@@ -97,9 +107,11 @@ export default class Empresa extends Component {
                 name="rfc"
                 type="text"
                 className="validate"
+                minLength={5}
                 required
               />
               <label for="rfc">RFC</label>
+              <MsgValidate />
             </div>
           </div>
 
@@ -110,9 +122,11 @@ export default class Empresa extends Component {
                 name="regimen_fiscal"
                 type="text"
                 className="validate"
+                minLength={5}
                 required
               />
               <label for="regimen_fiscal ">Régimen Fiscal</label>
+              <MsgValidate />
             </div>
             <div className="input-field col s6">
               <input
@@ -120,21 +134,26 @@ export default class Empresa extends Component {
                 name="industria"
                 type="text"
                 className="validate"
+                minLength={5}
                 required
               />
               <label for="industria">Industria</label>
+              <MsgValidate />
             </div>
           </div>
 
           <div className="row">
             <div className="input-field col s6">
               <input
-                id="telefonico"
-                name="telefonico"
-                type="text"
+                id="telefono"
+                name="telefono"
+                type="number"
+                min={1}
                 className="validate"
+                required
               />
-              <label for="telefonico">Telefónico</label>
+              <label for="telefono">Telefóno</label>
+              <MsgValidate />
             </div>
             <div className="input-field col s6">
               <input
@@ -142,9 +161,11 @@ export default class Empresa extends Component {
                 name="correo"
                 type="email"
                 className="validate"
+                minLength={5}
                 required
               />
               <label for="correo">Correo</label>
+              <MsgValidate />
             </div>
           </div>
         </form>
