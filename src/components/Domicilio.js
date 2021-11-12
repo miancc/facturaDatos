@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Domicilio extends Component {
   constructor(props) {
@@ -12,46 +13,71 @@ export default class Domicilio extends Component {
         <form className="col s12">
           <div className="row">
             <div className="input-field col s12">
-              <input id="calle" type="text" className="validate" />
+              <input id="calle" name="calle" type="text" className="validate" />
               <label for="calle">Calle</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s4">
-              <input id="num_ext" type="text" className="validate" />
+              <input
+                id="num_ext"
+                name="num_ext"
+                type="text"
+                className="validate"
+              />
               <label for="num_ext">Num Ext</label>
             </div>
 
             <div className="input-field col s4">
-              <input id="num_int" type="text" className="validate" />
+              <input
+                id="num_int"
+                name="num_int"
+                type="text"
+                className="validate"
+              />
               <label for="num_int">Num Int</label>
             </div>
 
             <div className="input-field col s4">
-              <input id="cp" type="number" className="validate" />
+              <input id="cp" name="cp" type="number" className="validate" />
               <label for="cp">C.P</label>
             </div>
           </div>
 
           <div className="row">
             <div className="input-field col s6">
-              <input id="colonia" type="text" className="validate" />
+              <input
+                id="colonia"
+                name="colonia"
+                type="text"
+                className="validate"
+              />
               <label for="colonia">Colonia</label>
             </div>
 
             <div className="input-field col s6">
-              <input id="ciudad" type="text" className="validate" />
+              <input
+                id="ciudad"
+                name="ciudad"
+                type="text"
+                className="validate"
+              />
               <label for="ciudad">Ciudad</label>
             </div>
           </div>
 
           <div className="row">
             <div className="input-field col s6">
-              <input id="estado" type="text" className="validate" />
+              <input
+                id="estado"
+                name="estado"
+                type="text"
+                className="validate"
+              />
               <label for="estado">Estado</label>
             </div>
             <div className="input-field col s6">
-              <input id="pais" type="text" className="validate" />
+              <input id="pais" name="pais" type="text" className="validate" />
               <label for="pais">Pais</label>
             </div>
           </div>
@@ -60,3 +86,7 @@ export default class Domicilio extends Component {
     );
   }
 }
+
+Domicilio.defaultProps = {
+  title: '',
+};
